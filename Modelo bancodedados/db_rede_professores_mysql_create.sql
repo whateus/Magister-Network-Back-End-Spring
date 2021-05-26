@@ -11,9 +11,7 @@ CREATE TABLE `tb_postagem` (
 
 CREATE TABLE `tb_tema` (
 	`id` INT NOT NULL AUTO_INCREMENT,
-	`titulo_referencia` varchar(100) NOT NULL,
-	`categoria` varchar(100) NOT NULL,
-	`disciplina` varchar(100) NOT NULL,
+	`disciplina_tema` varchar(100) NOT NULL,
 	PRIMARY KEY (`id`)
 );
 
@@ -22,6 +20,8 @@ CREATE TABLE `tb_usuario` (
 	`nome` varchar(100) NOT NULL,
 	`senha` varchar(11) NOT NULL,
 	`email` varchar(100) NOT NULL,
+	`disciplina` varchar(100) NOT NULL,
+	`formacao` varchar(100) NOT NULL,
 	PRIMARY KEY (`id`)
 );
 
