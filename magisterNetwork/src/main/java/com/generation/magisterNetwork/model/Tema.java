@@ -19,7 +19,7 @@ public class Tema {
 	
 	@NotNull
 	@Size(max = 100)
-	private String disciplina_tema;
+	private String disciplinaTema;
 
 	
 	
@@ -32,12 +32,14 @@ public class Tema {
 		this.id = id;
 	}
 
-	public String getDisciplina_tema() {
-		return disciplina_tema;
+	public String getDisciplinaTema() {
+		return disciplinaTema;
 	}
 
-	public void setDisciplina_tema(String disciplina_tema) {
-		this.disciplina_tema = disciplina_tema;
+	public void setDisciplinaTema(String disciplinaTema) {
+		this.disciplinaTema = disciplinaTema;
 	}
+
+	
 
 }
