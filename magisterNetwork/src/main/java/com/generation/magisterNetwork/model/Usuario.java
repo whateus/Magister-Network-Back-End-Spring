@@ -9,31 +9,31 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-
 @Entity
-@Table(name = "tb_tema")
-public class Tema {
+@Table(name = "tb_usuario")
+public class Usuario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@NotNull
-	@Size(max = 100)
-	private String disciplinaTema;
-
-	//Relação entre as tabelas Tema e Postagem
-	@OneToMany(mappedBy = "tema",cascade = CascadeType.ALL)
-	@JsonIgnoreProperties("tema")
+	@NotBlank
+	private String nome;
+	
+	@NotBlank
+	private String senha;
+	
+	@NotBlank
+	private String email;
+	
+	@OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
-	
-	
-	//getters and setters
+
 	public long getId() {
 		return id;
 	}
@@ -42,12 +42,28 @@ public class Tema {
 		this.id = id;
 	}
 
-	public String getDisciplinaTema() {
-		return disciplinaTema;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setDisciplinaTema(String disciplinaTema) {
-		this.disciplinaTema = disciplinaTema;
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public List<Postagem> getPostagem() {
