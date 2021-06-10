@@ -30,6 +30,9 @@ public class Usuario {
 	@NotBlank
 	private String email;
 	
+	@NotBlank
+	private String usuario;
+	
 	@OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
@@ -40,6 +43,14 @@ public class Usuario {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 	public String getNome() {
