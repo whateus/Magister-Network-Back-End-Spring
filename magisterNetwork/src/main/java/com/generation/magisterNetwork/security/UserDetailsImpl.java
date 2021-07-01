@@ -1,6 +1,7 @@
 package com.generation.magisterNetwork.security;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,7 +17,7 @@ private static final long serialVersionUID = 1L;
 	
 	private String password;
 	
-	
+	private List<GrantedAuthority> authorities;
 
 	public UserDetailsImpl(Usuario user) {
 		super();
@@ -24,11 +25,10 @@ private static final long serialVersionUID = 1L;
 		this.password = user.getSenha();
 	}
 
-
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
-		return null;
+		return authorities;
 	}
 
 	
