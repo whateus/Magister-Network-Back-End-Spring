@@ -19,6 +19,8 @@ public class UsuarioLogin {
 	
 	private String usuario;
 	
+	private String profissao;
+	
 	///getters and setters
 	public String getNome() {
 		return nome;
@@ -83,5 +85,15 @@ public class UsuarioLogin {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+
+	public String getProfissao() {
+		return profissao;
+	}
+
+	public void setProfissao(String profissao) {
+		this.profissao = profissao;
+	}
+	
+	
 	
 }

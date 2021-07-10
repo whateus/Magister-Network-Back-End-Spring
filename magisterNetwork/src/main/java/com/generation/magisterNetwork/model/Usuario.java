@@ -37,9 +37,19 @@ public class Usuario {
 	
 	private String tipo;
 	
+	private String profissao;
+	
 	@OneToMany(mappedBy = "usuario",cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
+	
+	public String getProfissao() {
+		return profissao;
+	}
+	
+	public void setProfissao(String profissao) {
+		this.profissao = profissao;
+	}
 
 	public long getId() {
 		return id;
