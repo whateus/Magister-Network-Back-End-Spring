@@ -2,12 +2,15 @@ package com.generation.magisterNetwork.model;
 
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -45,6 +48,10 @@ public class Postagem {
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
 	private Usuario usuario;
+	
+	@OneToMany(mappedBy = "postagem",cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties("postagem")
+	private List<Comentario> comentario;
 
 	
 	public long getId() {
@@ -102,5 +109,15 @@ public class Postagem {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
+
+	public List<Comentario> getComentario() {
+		return comentario;
+	}
+
+	public void setComentario(List<Comentario> comentario) {
+		this.comentario = comentario;
+	}
+	
+	
 	
 }

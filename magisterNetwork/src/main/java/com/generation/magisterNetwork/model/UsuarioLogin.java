@@ -21,6 +21,8 @@ public class UsuarioLogin {
 	
 	private String profissao;
 	
+	private String fotoCapa;
+	
 	///getters and setters
 	public String getNome() {
 		return nome;
@@ -92,6 +94,14 @@ public class UsuarioLogin {
 
 	public void setProfissao(String profissao) {
 		this.profissao = profissao;
+	}
+
+	public String getFotoCapa() {
+		return fotoCapa;
+	}
+
+	public void setFotoCapa(String fotoCapa) {
+		this.fotoCapa = fotoCapa;
 	}
 	
 	
