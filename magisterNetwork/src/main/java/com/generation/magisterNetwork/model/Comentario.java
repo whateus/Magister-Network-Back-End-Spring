@@ -31,7 +31,7 @@ public class Comentario {
 	private Date data = new Date (System.currentTimeMillis());
 	
 	@ManyToOne
-	@JsonIgnoreProperties(value= {"usuario", "comentario"})
+	@JsonIgnoreProperties(value= {"postagem", "comentario"})
 	private Usuario usuario;
 	
 	@ManyToOne
